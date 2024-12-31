@@ -16,10 +16,10 @@ Logic:
 - i -> looks for element is lesser than pivot
 - j -> looks for element is greater than pivot
 - loop condition, till j is left of i (j<i)
-- iterate i till we find an element that is NOT lesser than pivot, 
+- iterate i till we find an element that is NOT lesser (greater) than pivot, 
   if we find an element greater then pivot,
   then we swap arr[i] and arr[j]
-- iterate j till we find an element that is NOT greater than pivot,
+- iterate j till we find an element that is NOT greater (lesser) than pivot,
   if we find an element lesser than pivot,
 - once j is left of i, swap arr[i] with arr[pivot]
 (now we see that every ele left of pivot is lesser than pivot ele and,
