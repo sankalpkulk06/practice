@@ -11,3 +11,74 @@ How are they built:
     USA = index 0 (COLLISION)
     Japan = index 1
 - dicttionaries
+
+Example of a Hash function:
+    h(x) = x mod 7
+
+Good Hash functions:
+- efficently computable
+- uniformly distribute the keys
+
+Handle Collision:
+- if 2 values have the same keys, we can do:
+    - Chaining: each cell of a hash table poin to a linked list of records that have the same hash function value
+    - Open Addressing: all elements are stored in the hash table iteself
+            - Linear Probing
+            - Quadratic  Probing
+            - Double Hashing
+
+1. Separate Chaining:
+
+    h(x) = x mod 7
+    range of this function is 0 to 6
+    0 14 -> 21 -> 28
+    1 15 -> 36
+    2
+    .
+    .
+    * Advantages:
+    - simple to implement
+    - hash table never fills up
+    - less sensitive to hash function or load factors
+    * Disadvantages:
+    - cache performance of Chaining is not good as keys are stored using linked list
+    - waste of space
+    - is chain becomes long, seach time will be O(n) in worst case
+
+2. Open Addressing:
+
+    (i) Linear Probing:
+
+        hi(X) = (Hash(X) + i) % HashTableSize
+
+            if h0(X) = (Hash(X) + 0) % HashTableSize, is full then we try h1 (usually gives the next slot)
+            if h1(X) = (Hash(X) + 1) % HashTableSize, is full then we try h2
+            ... and so on 
+
+        Hand-on Example:
+            Keys : 7,36,18,62
+            tableSize = 11  
+
+            [0:, 1:, 2:, 3: 36, 4:, 5:, 6:,7: 7, 8: 18, 9: 62, 10:]
+
+            Insert(7) = 7 mod 11 = 7
+            Insert(36) = 36 mod 11 = 3
+            Insert(18) = 18 mod 11 = 7 (COLLISION) -> h1(18) = ((18 + 1) mod 11) = 8 (Insert) 
+            Insert(62) = 62 mod 11 = 7 (COLLISION) -> h1(62) = ((62 + 1) mod 11) = 8 (COLLISION) -> h2(62) = ((62 + 2) mod 11) = 9 (Insert)
+
+
+    (ii) Quadratic Probing:
+
+        hi(X) = (Hash(X) + i^2) % HashTableSize
+
+            if h0(X) = (Hash(X) + 0) % HashTableSize, is full then we try h1 
+            if h1(X) = (Hash(X) + 1) % HashTableSize, is full then we try h2
+            if h2(X) = (Hash(X) + 4) % HashTableSize, is full then we try h3
+            ... and so on 
+
+    (iii) Double Hashing:
+
+        hi(X) = (Hash(X) + i * Hash2(X)) % HashTableSize
+
+        - we are using 2 hash functions instead of 1
+
