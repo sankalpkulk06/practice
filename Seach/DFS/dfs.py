@@ -1,5 +1,6 @@
 """
 - DFS from a Given Source of Undirected Graph
+- Uses a Stack
 """
 
 def dfs_rec(adj, visited, s):
