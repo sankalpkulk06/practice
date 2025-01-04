@@ -1,0 +1,13 @@
+- < key : value > pair
+- Key must be immutable (eg: cant use a list has a key, but tuple(list[]) is immutable)
+
+Benefits:
+- Custom keys are easier for software engineers to work with
+- Allows search in O(1), whereas list O(n)
+
+How are they built:
+- Hash functions
+    France = index 0
+    USA = index 0 (COLLISION)
+    Japan = index 1
+- dicttionaries
