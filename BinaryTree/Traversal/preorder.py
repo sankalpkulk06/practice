@@ -14,16 +14,12 @@ def preorder(root):
     if root is None:
         return
 
-
-
-    # Recursive call on right subtree
-    preorder(root.right)
-
     # visit current node
     print(root.data, end=" ")
-
     # Recursive call on left subtree
     preorder(root.left)
+    # Recursive call on right subtree
+    preorder(root.right)
 
 
 root = Node(1)
