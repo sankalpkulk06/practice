@@ -16,6 +16,17 @@ AB -> 28
 """
 
 def convertToTitle(columnNumber):
-    return
+    result = ''
+
+    while columnNumber > 0:
+        columnNumber -= 1
+
+        currChar = chr(columnNumber % 26 + ord('A'))
+
+        result = currChar + result
+
+        columnNumber //= 26
+
+    return result
 
 print(convertToTitle(28))
