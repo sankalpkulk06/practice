@@ -47,7 +47,7 @@ Question:
 Answer:
     Brute force:
     - We can use a nested loop to check all possible subarrays of length k.
-    - This will take O(n^2) time.
+    - This will take O(n*k) time.
     - We can optimize this by using a sliding window.
 
 2. What is the time complexity of the sliding window approach?
