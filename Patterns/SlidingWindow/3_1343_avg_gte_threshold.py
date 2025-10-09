@@ -29,11 +29,7 @@ def numOfSubarrays(arr, k, threshold):
 
 arr = [2,2,2,2,5,5,5,8]
 res = numOfSubarrays(arr, 3, 4)
-print(res) 
-
-arr2 = [11,13,17,23,29,31,7,5,2,3]
-res2 = numOfSubarrays(arr2, 3, 5)
-print(res2) 
+print(res)
 
 """
 Question:
