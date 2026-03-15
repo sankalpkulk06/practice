@@ -33,4 +33,4 @@ if __name__ == "__main__":
     print(fib(7))
     print(fib(10))
 
-    print(fib(50))
+    # print(fib(50)) # this will take a long time to compute
