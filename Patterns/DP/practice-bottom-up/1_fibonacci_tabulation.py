@@ -15,6 +15,14 @@ def fib(n):
     Tabulation approach:
     - init a table with n+1 elements
 
+    base cases:
+    - if n == 0, return 0
+    - if n == 1, return 1
+    - if n > 1, table[1] = 1
+    
+    fill the table:
+    - for each element in the table, add the previous two elements (if possible)
+    - return the last element in the table
     """
 
     # init table
